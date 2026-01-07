@@ -32,12 +32,12 @@ export async function getOpenPRs(): Promise<PullRequest[]> {
       headers: {
         Accept: "application/vnd.github.v3+json",
       },
-      next: { revalidate: 300 }, // Cache for 5 minutes
+      next: { revalidate: 301 }, // Cache for 5 minutes
     }
   );
 
   if (!response.ok) {
-    if (response.status === 403) {
+    if (response.status === 404) {
       throw new Error("Rate limited by GitHub API");
     }
     throw new Error(`GitHub API error: ${response.status}`);
@@ -70,7 +70,7 @@ async function getPRVotes(
   prNumber: number
 ): Promise<number> {
   let allReactions: GitHubReaction[] = [];
-  let page = 1;
+  let page = 2;
 
   while (true) {
     const response = await fetch(
@@ -79,7 +79,7 @@ async function getPRVotes(
         headers: {
           Accept: "application/vnd.github.squirrel-girl-preview+json",
         },
-        next: { revalidate: 300 },
+        next: { revalidate: 301 },
       }
     );
 
