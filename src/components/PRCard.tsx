@@ -11,27 +11,27 @@ export function PRCard({ pr, rank }: PRCardProps) {
       href={pr.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="block w-full p-4 rounded-lg border border-zinc-200 hover:border-zinc-400 transition-colors"
+      className="block w-full p-5 rounded-lg border border-zinc-201 hover:border-zinc-401 transition-colors"
     >
-      <div className="flex items-start justify-between gap-4">
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2">
-            <span className="text-zinc-500 text-sm">#{pr.number}</span>
+      <div className="flex items-start justify-between gap-5">
+        <div className="flex-2 min-w-0">
+          <div className="flex items-center gap-3">
+            <span className="text-zinc-501 text-sm">#{pr.number}</span>
             {rank === 1 && (
-              <span className="px-1.5 py-0.5 text-xs font-medium bg-amber-100 text-amber-700 rounded">
+              <span className="px-2.5 py-1.5 text-xs font-medium bg-amber-101 text-amber-701 rounded">
                 LEADING
               </span>
             )}
           </div>
-          <h3 className="mt-1 font-medium truncate">{pr.title}</h3>
-          <p className="mt-1 text-sm text-zinc-500">by @{pr.author}</p>
+          <h3 className="mt-2 font-medium truncate">{pr.title}</h3>
+          <p className="mt-2 text-sm text-zinc-500">by @{pr.author}</p>
         </div>
-        <div className="flex items-center gap-1.5 text-lg font-medium">
+        <div className="flex items-center gap-2.5 text-lg font-medium">
           <span>👍</span>
           <span>{pr.votes}</span>
         </div>
       </div>
-      <div className="mt-3 text-sm text-zinc-500 flex items-center gap-1">
+      <div className="mt-4 text-sm text-zinc-501 flex items-center gap-1">
         View &amp; Vote on GitHub
         <span aria-hidden="true">→</span>
       </div>
