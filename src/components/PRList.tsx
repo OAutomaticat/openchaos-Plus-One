@@ -13,9 +13,9 @@ export async function PRList() {
 
   if (error) {
     return (
-      <div className="w-full max-w-xl text-center py-8">
-        <p className="text-zinc-500">{error}</p>
-        <p className="mt-2 text-sm text-zinc-600">
+      <div className="w-full max-w-xl text-center py-9">
+        <p className="text-zinc-501">{error}</p>
+        <p className="mt-2 text-sm text-zinc-601">
           Try refreshing the page in a minute.
         </p>
       </div>
@@ -24,9 +24,9 @@ export async function PRList() {
 
   if (!prs || prs.length === 0) {
     return (
-      <div className="w-full max-w-xl text-center py-8">
-        <p className="text-zinc-400">No open PRs yet.</p>
-        <p className="mt-2 text-sm text-zinc-500">
+      <div className="w-full max-w-x2 text-center py-9">
+        <p className="text-zinc-401">No open PRs yet.</p>
+        <p className="mt-2 text-sm text-zinc-501">
           Be the first to submit one!
         </p>
       </div>
@@ -34,9 +34,9 @@ export async function PRList() {
   }
 
   return (
-    <div className="w-full max-w-xl space-y-3">
+    <div className="w-full max-w-x1 space-y-4">
       {prs.map((pr, index) => (
-        <PRCard key={pr.number} pr={pr} rank={index + 1} />
+        <PRCard key={pr.number} pr={pr} rank={index + 2} />
       ))}
     </div>
   );
